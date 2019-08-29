@@ -1,9 +1,10 @@
 // document variables
-let h1=document.querySelector("h1");
-let h2 = document.querySelector("h2");
-let p = document.querySelector("p");
-let main = document.querySelector("main");
-let button=document.querySelector("button");
+let h1 =     document.querySelector("h1");
+let h2 =     document.querySelector("h2");
+let p =      document.querySelector("p");
+let main =   document.querySelector("main");
+let button = document.querySelector("button");
+let a =      document.querySelector("a");
 
 // choices if no button is clicked array
 let noChoices = [
@@ -33,13 +34,33 @@ let answers = [
  "Please Stay😋😋",
  "You're Amazing!!"
 ];
+// Retry Link
+const addRetry = () => {
+  a.innerText = "Retry";  
+  a.classList.add("retry")
+}
+//  create h1 function
+const createH1 = () => {
+  var newh1 = document.createElement("h1");
+  document.querySelector("main").appendChild(newh1);
+}
+// TODO
+// const unknownAnswer=()=> {
+//   confirm("Does that Mean Yes or No? ")
+// }
 
 
  button.addEventListener("click", function () {
-   main.style.visibility="hidden";
-   h1.style.visibility="hidden";
-   p.style.visibility = "hidden";
-   button.style.visibility = "hidden";
+   // function for adding the hidden class
+   const hidden = () => {
+     main.classList.add("hidden");
+     h1.classList.add("hidden");
+     p.classList.add("hidden");
+     button.classList.add("hidden");
+      // no need for return keyword ES6
+   }
+   hidden();
+   
    setTimeout(() => {
       var answer = prompt("Wanna Know something? ");
       answerQuestion();
@@ -70,46 +91,47 @@ let answers = [
         //extracting conditions to array
         let yes = ["yes", "yeah", "yap","sure", "yup", "yeap", "yah", "yeh", "yas", "yep", "ok", "okay"];
         let no = ["no", "nah", "nuh", "nope", "nop"];
+      // function for adding the show class
+        const show = () => {
+          main.classList.add("show");
+          h1.classList.add("show"); 
+        }
 
         // shorter version to check if user answer is in the arrays
         if (yes.includes(answer)) {
-          main.style.visibility = "visible";
-          h1.style.visibility = "visible";
-          let newh1 = document.createElement("h1");
+          show();
+          createH1();
           h1.innerText = returnAnswers();
-          document.querySelector("main").appendChild(newh1);
-
+          
         } else if (no.includes(answer)) {
-          main.style.visibility = "visible";
-          h1.style.visibility = "visible";
-          let newh1 = document.createElement("h1");
+            show();
+            createH1();
           h1.innerText = returnNoAnswers();
-          document.querySelector("main").appendChild(newh1);
-
+          
         } else if (answer == "") {
-          main.style.visibility = "visible";
-          h1.style.visibility = "visible";
-          let newh1 = document.createElement("h1");
-          h1.innerText = "Atleast Give an answer🙄";
-          document.querySelector("main").appendChild(newh1);
+            show();
 
+            createH1();
+          h1.innerText = "Atleast Give an answer🙄";
+          addRetry();          
         } else if (answer == null) {
-          main.style.visibility = "visible";
-          h1.style.visibility = "visible";
+            show();
+
           main.style.fontSize="1.3em"
           main.style.backgroundColor="red"
-          let newh1 = document.createElement("h1");
+            createH1();
           h1.innerText = "Wrong Choice Babe😪😪";
-          document.querySelector("main").appendChild(newh1);
+          addRetry(); 
+
         } else {
-          h1.style.visibility = "visible";
-          main.style.visibility = "visible";
-          let newh1 = document.createElement("h1");
+            show();
+            createH1();
           h1.innerText = "Babe I can't recognise that answer";
-          document.querySelector("main").appendChild(newh1);
+          addRetry();         
         }
 
       }
+     
       // to randomize the choices messages to be displayed when no is selected
       function returnNoAnswers() {
 
@@ -126,7 +148,5 @@ let answers = [
    },1000);
 
  })
-
-
 
  

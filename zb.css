@@ -9,7 +9,32 @@ main{
     background-color: aqua;
     
 }
+main-yes {
+    margin: 2em;
+    padding: 4em;
+    background-color: rgb(34, 251, 161);
+
+}
+main-no {
+    margin: 2em;
+    padding: 4em;
+    background-color: rgb(250, 179, 86);
+
+}
 button {
-    background-color: gray;
+    color: #fff;
+    background-color: rgb(230, 57, 109);
+    font-size: 1.2em;
+}
+.hidden {
+    visibility: hidden;
+}
+.show {
+    visibility: visible;
+}
+
+.retry {
+    border: solid green 1px;
+    background-color: yellow;
     font-size: 1.2em;
 }
