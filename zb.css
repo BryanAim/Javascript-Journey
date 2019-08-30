@@ -1,40 +1,95 @@
-body{
+body {
     font-family: sans-serif;
     text-align: center;
-    
+
 }
-main{
+
+main {
+    border-radius: 2em;
     margin: 2em;
     padding: 4em;
     background-color: aqua;
-    
-}
-main-yes {
-    margin: 2em;
-    padding: 4em;
-    background-color: rgb(34, 251, 161);
 
 }
-main-no {
-    margin: 2em;
-    padding: 4em;
-    background-color: rgb(250, 179, 86);
+
+.content {
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 6% auto;
+    font-size: 4rem;
 
 }
-button {
+
+.content button {
+    border-radius: 2em;
+    font-size: 2rem;
+    background-color: teal;
     color: #fff;
-    background-color: rgb(230, 57, 109);
-    font-size: 1.2em;
-}
-.hidden {
-    visibility: hidden;
-}
-.show {
-    visibility: visible;
+    border: none;
+    padding: .5rem 2rem;
+    transition: all .3s ease;
+    cursor: pointer;
 }
 
-.retry {
-    border: solid green 1px;
-    background-color: yellow;
-    font-size: 1.2em;
+.content button:hover {
+    background-color: mediumpurple;
+}
+
+.modal {
+    border-radius: 2em;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 4em;
+    right: 6em;
+    height: 65vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal--hidden {
+    display: none;
+}
+
+.modal__contents {
+    border-radius: 2em;
+    background-color: #fff;
+    padding: 2rem 4rem;
+    /* margin-right: 0; */
+    /* margin-top: 0; */
+    cursor: pointer;
+}
+
+.modal__close-bar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+span {
+    border-radius: .3em;
+    background: teal;
+    padding: .5em;
+}
+
+input[type=text] {
+    border-radius: 1em;
+    width: 100%;
+    padding: .5rem;
+}
+
+div#learn-more button {
+    border-radius: 1em;
+    width: 60%;
+    padding: .5rem;
+    background-color: teal;
+    border: none;
+    color: #fff;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+div button:hover {
+    background-color: darkcyan;
 }
