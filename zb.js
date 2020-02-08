@@ -235,7 +235,9 @@ document.querySelector("#submit").addEventListener("click", () => {
   } else if (herReplies.no.includes(getInput())) {
     showNoInput();
   } else {
-    p.textContent = "I don't Understand that"
+    p.textContent = "I don't Understand that";
+    document.querySelector(".question").textContent = "Does it Mean Yes or No?";
+    toggleModal();
   }
   toggleModal();
 
